@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container-fluid">
+<link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
 
+<div class="container-fluid" style="padding-left:20%; padding-right:20%;padding-bottom:13%">
+<div class="container">
+<h3>Post here</h3> <hr>
 <form method="POST" action="">
 
         {{ form.csrf_token }}
@@ -36,25 +39,13 @@
         </div>
 
         <div class="form-group">
-                {{ form.category.label(class="form-control-label") }}
-                {% if form.category.errors %}
-                    {{ form.category(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.category.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                {% else %}
-                    {{ form.category(class="form-control form-control-lg") }}
-                {% endif %}
-        </div>
-
-        <div class="form-group">
             
                 {{ form.submit(class="form-control form-control-lg") }}
         
         </div>
-</form>        
+</form> 
+</div>
+
 </div>
 
 {% endblock %}
