@@ -1,4 +1,4 @@
-from flask import render_template,redirect,url_for
+from flask import render_template,redirect,url_for,request
 from . import auth
 from ..models import User
 from .forms import RegistrationForm,LoginForm
@@ -21,7 +21,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username = form.username.data).first()
         if user is not None and user.verify_password(form.password.data):
-            login_user(user,form.remember.data)
+            login_user(user,remember=form.remember.data)
             return redirect(request.args.get('next') or url_for('main.index'))
 
         flash('Invalid username or Password')
