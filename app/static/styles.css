@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
 .container-fluid{
-    /* background-image:url(../static/img1.jpg); */
+    background-image:url(../static/img3.jpg);
     color:black;
-    padding-bottom: 2%;
+}
+h3{
+    font-family: 'Lobster', cursive;
+    font-size: 100px;
+    color: whitesmoke;
+    text-align: center; 
+}
+.container{
+    background-color: rgb(0,0,0,0.9);
+    opacity: 0.9;
+    color:white;
+    background-size: cover;
+}
+.move{
 }
