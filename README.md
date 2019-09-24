@@ -8,7 +8,7 @@ My blog is a python project build in flask, where you can create and share your 
 * Student Moringa School Project
 
 ## live link 
-The link to the live deployment of this app is 
+The link to the live deployment of this app is https://blogypitch.herokuapp.com/
 which is also adjacent to the description at the top of the repository This is deployment at Heroku master
 
 ## bdd
