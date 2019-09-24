@@ -2,17 +2,18 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
-<div class="container-fluid" style="padding-bottom:17%"> 
+<div class="container-fluid" style="padding-bottom:10   %"> 
     <div class="container" style="padding-top:10%">
         <div class="row">
           <div class= "col-md-2"> </div>
           <div class="col-md-8">
+              <h3> Drop Comment </h3>
           <!--Flash message -->
           <form method="POST" action="">
 
-                {{ form.csrf_token }}
+                {{ forms.csrf_token }}
 
-                <div class="form-group">
+                <div class="form-group meme">
                     {{ forms.comment.label(class="form-control-label") }}
                     {% if forms.comment.errors %}
                         {{ forms.comment(class="form-control form-control-lg is-invalid") }}
@@ -34,7 +35,12 @@
             <p> You don't have an account? <a href="{{url_for('auth.create_account')}}">Sign up </a></p>
         </form>    
         </div>
-            <div clas="col-md-2"> </div>
+            <div clas="col-md-2"> 
+                <h4 style="color:white"> Your comment</h4> 
+                {%for comment in comments%}
+                    {{comment.comment}}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>

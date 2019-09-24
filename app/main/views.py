@@ -28,7 +28,7 @@ def new_blog(blog_id):
     '''
     return render_template(blog.html,id = blog_id)
 
-@main.route('/posts/new',methods = ['GET', 'POSTS'])
+@main.route('/posts/new',methods = ['GET', 'POST'])
 @login_required
 def new_post():
     form = PostForm()
