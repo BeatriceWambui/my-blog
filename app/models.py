@@ -66,7 +66,7 @@ class Comments(db.Model):
 
 class Quotes:
     '''
-    Quotes class to define Movie Objects
+    Quotes class to define quotes Objects
     '''
     def __init__(self,author,id,quote,permalink):
         self.id = id
