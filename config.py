@@ -1,8 +1,10 @@
+import os
+
 class Config:
     '''
     General configuration parent class
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:E*7@wach@localhost/blog'
+    # SQLALCHEMY_DATABASE_URI ='postgresql+psycopg2://moringa:E*7@wach@localhost/blog'
     SECRET_KEY='g43hu984jhg98u489rih4398yugi'
 
 class ProdConfig(Config):
@@ -12,8 +14,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    pass
-
+    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL") 
 
 class DevConfig(Config):
     '''
